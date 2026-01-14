@@ -77,6 +77,7 @@ def delete_shelf():
         return
     item = shelves_list.item(sel[0])
     number = item['values'][0]
+
     try:
         Shelf.delete().where(Shelf.number == number).execute()
         refresh_shelves()
